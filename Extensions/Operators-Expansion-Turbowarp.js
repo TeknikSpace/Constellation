@@ -560,8 +560,10 @@
         return base.substring(0, idx);
     }
     splitTextToArray(args) {
-        // Split the text into an array using the delimiter
-        return (args.text).split(args.splitter);
+        // Use a regular expression to split the text by the delimiter
+        // while ignoring delimiters within parentheses
+        let regex = new RegExp((args.delimiter) + "(?![^()]*\\))", "g");
+        return (args.text).split(regex);
     }
     
     
