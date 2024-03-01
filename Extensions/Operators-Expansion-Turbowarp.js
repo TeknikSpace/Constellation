@@ -257,6 +257,18 @@
                 }
             },
             {
+                opcode: 'splittextintoarray',
+                text: 'split [text] into array',
+                blockType: Scratch.BlockType.REPORTER,
+                disableMonitor: true,
+                arguments: {
+                    text: {
+                        type: Scratch.ArgumentType.STRING,
+                        defaultValue: "Multiple Line Text Here!"
+                    }
+                }
+            },
+            {
                 opcode: 'textAfter',
                 text: 'text after [TEXT] in [BASE]',
                 blockType: Scratch.BlockType.REPORTER,
@@ -514,7 +526,9 @@
         const lines = (args.text).split('\n');
         return lines.length; 
     }
-
+    textToLines(args) {
+        return (args.text).split('\n');
+    }
     textAfter(args) {
         const text = Scratch.Cast.toString(args.TEXT);
         const base = Scratch.Cast.toString(args.BASE);
