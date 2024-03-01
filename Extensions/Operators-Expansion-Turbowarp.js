@@ -300,22 +300,6 @@
                     }
                 }
             },
-            {
-                opcode: 'splitTextToArray',
-                text: 'Split [text] into array by [splitter]',
-                blockType: Scratch.BlockType.REPORTER,
-                disableMonitor: true,
-                arguments: {
-                    text: {
-                        type: Scratch.ArgumentType.STRING,
-                        defaultValue: "Hello, World!"
-                    },
-                    splitter: {
-                        type: Scratch.ArgumentType.STRING,
-                        defaultValue: ", "
-                    }
-                }
-            },
           ],
           menus: {
             part: {
@@ -558,12 +542,6 @@
         const idx = base.indexOf(text);
         if (idx < 0) return '';
         return base.substring(0, idx);
-    }
-    splitTextToArray(args) {
-        // Use a regular expression to split the text by the delimiter
-        // while ignoring delimiters within parentheses
-        let regex = new RegExp((args.delimiter) + "(?![^()]*\\))", "g");
-        return (args.text).split(regex);
     }
     
     
