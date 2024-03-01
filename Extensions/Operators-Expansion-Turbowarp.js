@@ -300,6 +300,22 @@
                     }
                 }
             },
+            {
+                opcode: 'splitTextToArray',
+                text: 'Split [text] into array by [splitter]',
+                blockType: Scratch.BlockType.REPORTER,
+                disableMonitor: true,
+                arguments: {
+                    text: {
+                        type: Scratch.ArgumentType.STRING,
+                        defaultValue: "Hello, World!"
+                    },
+                    splitter: {
+                        type: Scratch.ArgumentType.STRING,
+                        defaultValue: ", "
+                    }
+                }
+            },
           ],
           menus: {
             part: {
@@ -543,6 +559,11 @@
         if (idx < 0) return '';
         return base.substring(0, idx);
     }
+    splitTextToArray(args) {
+        // Split the text into an array using the delimiter
+        return (args.text).split(text.splitter);
+    }
+    
     
     }
   
