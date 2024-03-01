@@ -561,7 +561,7 @@
     }
     splitTextToArray(args) {
         // Split the text into an array using the delimiter
-        return (args.text).split(text.splitter);
+        return (args.text).split(args.splitter);
     }
     
     
