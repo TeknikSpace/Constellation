@@ -1,0 +1,4 @@
+repeat(10)
+say(hello1)
+say(hello2)
+repeat.close()
